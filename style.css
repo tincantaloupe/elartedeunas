@@ -1,0 +1,482 @@
+/* colors used:
+background: #fff4ff
+slogan: #dd6f5e
+orange tone: #dd6f5e
+inspiration text: #d69d61
+resource used: 
+https://huemint.com/brand-intersection/
+http://colormind.io
+https://www.google.com/search?client=opera-gx&q=font+spacing&sourceid=opera&ie=UTF-8&oe=UTF-8
+https://rgbacolorpicker.com/hex-to-rgba
+https://unsplash.com
+https://cssgradient.io
+https://fonts.google.com/selection/embed
+*/
+
+body {
+  background-color: #fff4ff !important;
+  background-image: none;
+  color: #fff4ff;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  max-width: 1400px;
+  min-height: fit-content;
+  padding: 20px;
+}
+
+.logo {
+  background-image: url(https://f2.toyhou.se/file/f2-toyhou-se/images/101338904_3gX5vVE0owUr8ZL.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 300px;
+  width: auto;
+  z-index: 1;
+  position: relative;
+}
+
+h2.slogan {
+  font-weight: bolder;
+  font-family: "Tangerine", serif;
+  font-size: 48px;
+  letter-spacing: 6px;
+  color: #dd6f5e;
+  justify-self: center;
+  margin-top: -40px;
+}
+
+.navegacion {
+  margin-top: -20px;
+  height: 70px;
+  width: 100%;
+  background: linear-gradient(
+    0deg,
+    rgba(244, 210, 206, 1) 0%,
+    rgba(253, 187, 45, 0) 100%
+  );
+  border-radius: 0px 0px 20px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 70px;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 40px;
+  margin-bottom: -2px;
+}
+
+.nav-link {
+  color: #df634f;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 17px;
+  padding: 10px 25px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.nav-link:hover {
+  background: linear-gradient(
+    0deg,
+    rgba(255, 244, 255, 1) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+.inspiration-box {
+  display: flex;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.inspiration-text {
+  flex: 1;
+  height: 500px;
+  background-color: #d69d61;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 18px;
+  border-radius: 20px 0px 0px 20px;
+}
+.text-overlay {
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #df634f;
+  font-weight: 600;
+  padding: 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  max-width: 80%;
+  text-align: center;
+}
+
+.insp-button {
+  display: inline-block;
+  background-color: #d69d61;
+  color: white;
+  padding: 12px 24px;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: bold;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  border: 2px solid #d69d61;
+}
+
+.insp-button:hover {
+  background-color: rgba(255, 244, 255, 1);
+  color: #d69d61;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.insp {
+  display: block;
+  justify-items: center;
+}
+.inspiration-image {
+  flex: 1;
+  height: 500px;
+  background-color: #333;
+  background-image: url("https://f2.toyhou.se/file/f2-toyhou-se/images/101339506_R5AeX9nyPJX8tyf.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 18px;
+  border-radius: 0px 20px 20px 0px;
+}
+
+.gallery-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.gallery-title {
+  text-align: center;
+  color: #d69d61;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  font-weight: 300;
+}
+
+.slideshow-container {
+  position: relative;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.slide {
+  display: none;
+  position: relative;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.slide.active {
+  display: block;
+}
+
+.slide img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}
+
+.slide-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  color: white;
+  padding: 30px;
+}
+
+.slide-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.slide-description {
+  font-size: 1rem;
+  opacity: 0.9;
+  line-height: 1.4;
+}
+
+/* Navigation arrows */
+.nav-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(214, 157, 97, 0.8);
+  color: white;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.nav-arrow:hover {
+  background: rgba(214, 157, 97, 1);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.prev {
+  left: 20px;
+}
+
+.next {
+  right: 20px;
+}
+
+/* Dots indicators */
+.dots-container {
+  text-align: center;
+  padding: 20px;
+  background: white;
+}
+
+.dot {
+  height: 12px;
+  width: 12px;
+  margin: 0 5px;
+  background-color: #ccc;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dot.active,
+.dot:hover {
+  background-color: #d69d61;
+  transform: scale(1.2);
+}
+
+/* Auto-play indicator */
+.play-pause {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.play-pause:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Tutorial Section */
+.tutorial-section {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  padding: 50px 40px;
+  margin-bottom: 40px;
+}
+
+.tutorial-title {
+  text-align: center;
+  color: #d69d61;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+.video-container {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  background: #f8f9fa;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.video-container video {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.video-description {
+  text-align: center;
+  margin-top: 20px;
+  color: #666;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Footer */
+.footer {
+  background: linear-gradient(135deg, #d69d61, #c08a54);
+  color: white;
+  padding: 50px 0;
+  margin-top: auto;
+  width: 100%;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+}
+
+.footer-section h3 {
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.footer-section p {
+  line-height: 1.6;
+  opacity: 0.9;
+  margin-bottom: 15px;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+  opacity: 0.9;
+}
+
+.footer-section ul li a {
+  color: white;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+  opacity: 0.7;
+}
+
+.social-links {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.social-links a {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .slide img {
+    height: 350px;
+  }
+
+  .slide-title {
+    font-size: 1.4rem;
+  }
+
+  .slide-content {
+    padding: 20px;
+  }
+
+  .gallery-title {
+    font-size: 2rem;
+  }
+
+  .nav-arrow {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+
+  .tutorial-title {
+    font-size: 2rem;
+  }
+
+  .tutorial-section {
+    padding: 30px 20px;
+    margin: 20px;
+    border-radius: 15px;
+  }
+
+  .video-container {
+    padding: 15px;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .footer {
+    padding: 40px 0 20px;
+  }
+}
+
+/* Font Styles */
+@import url(@import url('https://fonts.googleapis.com/css?family=Tangerine:wght@400;700&display=swap');
+
+
+/* Image Credit 
+
+https://unsplash.com/photos/a-womans-hand-holding-a-ring-in-the-air-5EO4_lt8Mds
+*/;;
